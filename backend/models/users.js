@@ -1,16 +1,15 @@
 const mongoose = require('mongoose')
+// require('../mongoConfig/db')  para la creacion manual inicial de datos en la db
 
 const usersSchema = new mongoose.Schema({
-    
+   
     user : {
         type : 'String',
-        unique : true,
-        upperCase : true,
+         unique:true,
         trim : true,
     },
     pass : {
         type : 'String',
-        unique : false,
         trim : true
     }
 })
@@ -25,6 +24,49 @@ usersSchema.set('toJSON', {
 
 const User = mongoose.model('User',usersSchema)
 
+// para la creacion manual inicial de datos en la db
+//
+//  const data = new User({
+//         user: 'Claudia',
+//         pass: 'marAzul'
+//     })
+//     const data2 = new User({
+//         user: 'Alejandra',
+//         pass: 'free'
+//     })
+    
+//     const data3 = new User({
+//         user:'ale',
+//         pass: '12345'
+//     })
+    
+    
+    
+
+//     data.save()
+//     .then(result => {
+//         console.log(result)
+//     })
+//     .catch(err => {
+//         console.log(err)
+//     })
+    
+//     data2.save()
+//     .then(result => {
+//         console.log(result)
+        
+//     })
+//     .catch(err => {
+//         console.log(err)
+//     })
+
+//     data3.save()
+//     .then(result => {
+//         console.log(result)
+        
+//     }).catch(error => {
+//         console.log(error)
+//     })
 
 // // get all the data of data base 
 // User.find({}).then(result => {
@@ -34,19 +76,7 @@ const User = mongoose.model('User',usersSchema)
 
 
 
-//  const user = new User({
-//     user:'ale',
-//     pass: '123'
-// })
-
-
-// user.save()
-// .then(result => {
-//     console.log(result)
-//     mongoose.connection.close()
-// }).catch(error => {
-//     console.log(error)
-// })
+ 
 
 
 module.exports = User

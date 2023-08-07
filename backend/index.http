@@ -1,3 +1,9 @@
-// show all gateway and devices
+// show all users
 GET http://localhost:3028/api/users HTTP/1.1
+Content-Type: application/json
+
+###
+
+// get user by username
+GET http://localhost:3028/api/users/Alejandra HTTP/1.1
 Content-Type: application/json

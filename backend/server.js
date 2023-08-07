@@ -27,10 +27,6 @@ app.use(cookieParser)
 
 
 const port = process.env.PORT || 3002;
-
-app.get('/',(req,res) => {
-    res.send("THIS WORKS !!")
-  })
   
   app.listen(port, () => {
     console.log(`Server running on port ${port}`);
